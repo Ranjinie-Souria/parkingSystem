@@ -57,7 +57,7 @@ public class FareCalculatorServiceTest {
     }
 
     @Test
-    public void calculateFareUnkownType(){
+    public void calculateFareUnknownType(){
         Date inTime = new Date();
         inTime.setTime( System.currentTimeMillis() - (  60 * 60 * 1000) );
         Date outTime = new Date();
@@ -124,10 +124,9 @@ public class FareCalculatorServiceTest {
         assertEquals( (24 * Fare.CAR_RATE_PER_HOUR) , ticket.getPrice());
     }
     
-    
-   @Test
+    @Test
     public void free30MinParking() {
-	   Date inTime = new Date();
+       Date inTime = new Date();
        inTime.setTime( System.currentTimeMillis() - (  30 * 60 * 1000) );//30 minutes parking time should give free parking fare
        Date outTime = new Date();
        ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR,false);
@@ -136,13 +135,14 @@ public class FareCalculatorServiceTest {
        ticket.setOutTime(outTime);
        ticket.setParkingSpot(parkingSpot);
        fareCalculatorService.calculateFare(ticket);
-       assertEquals( (0 * Fare.CAR_RATE_PER_HOUR) , ticket.getPrice());
+       assertEquals((0 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
     }
-    
+
     @Test
     public void checkDiscountRecurringUsers() {
-    	//TODO check if user got the 5% discount (vehicle registration number exists)
+        //TODO check if user got the 5% discount (vehicle registration number exists)
     }
+
     
 
 }

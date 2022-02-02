@@ -1,5 +1,5 @@
 package com.parkit.parkingsystem.service;
-
+import java.util.Date;
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.model.Ticket;
 
@@ -11,13 +11,18 @@ public class FareCalculatorService {
         }
 
 
-		int inHour = ticket.getInTime().getHours();
-        int outHour = ticket.getOutTime().getHours();
-
+        Date inHour = ticket.getInTime();
+        Date outHour =  ticket.getOutTime();
+        
+        //converting the duration in milliseconds to hours
+        double durationMilliseconds = outHour.getTime() - inHour.getTime();
+        double duration = ((durationMilliseconds / (1000*60*60)) % 24);
+        
         //TODO: Some tests are failing here. Need to check if this logic is correct
-        int duration = outHour - inHour;
 
-        switch (ticket.getParkingSpot().getParkingType()){
+    System.out.println("heures : "+duration+" millisecondes : "+durationMilliseconds);
+    if(duration>0.50) {
+    	switch (ticket.getParkingSpot().getParkingType()){
             case CAR: {
                 ticket.setPrice(duration * Fare.CAR_RATE_PER_HOUR);
                 break;
@@ -28,5 +33,7 @@ public class FareCalculatorService {
             }
             default: throw new IllegalArgumentException("Unknown Parking Type");
         }
+    }
+        
     }
 }
