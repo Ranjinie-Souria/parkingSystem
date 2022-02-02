@@ -1,5 +1,7 @@
 package com.parkit.parkingsystem.service;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.model.Ticket;
 
@@ -16,9 +18,7 @@ public class FareCalculatorService {
         
         //converting the duration in milliseconds to hours
         double durationMilliseconds = outHour.getTime() - inHour.getTime();
-        double duration = ((durationMilliseconds / (1000*60*60)) % 24);
-        
-        //TODO: Some tests are failing here. Need to check if this logic is correct
+        double duration = TimeUnit.MILLISECONDS.toHours((long) durationMilliseconds);
 
     System.out.println("heures : "+duration+" millisecondes : "+durationMilliseconds);
     if(duration>0.50) {
