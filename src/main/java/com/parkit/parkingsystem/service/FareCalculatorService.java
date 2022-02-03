@@ -19,8 +19,12 @@ public class FareCalculatorService {
         //converting the duration in milliseconds to hours
         double durationMilliseconds = outHour.getTime() - inHour.getTime();
         double duration = TimeUnit.MILLISECONDS.toHours((long) durationMilliseconds);
-
-    System.out.println("heures : "+duration+" millisecondes : "+durationMilliseconds);
+        //in the case the duration is inferior to 1 hour
+        if(duration<1) {
+        	duration = TimeUnit.MILLISECONDS.toMinutes((long) durationMilliseconds);
+        	duration = duration / 60;
+        }
+        
     if(duration>0.50) {
     	switch (ticket.getParkingSpot().getParkingType()){
             case CAR: {
@@ -33,6 +37,9 @@ public class FareCalculatorService {
             }
             default: throw new IllegalArgumentException("Unknown Parking Type");
         }
+    }
+    else {
+    	ticket.setPrice(0);
     }
         
     }
