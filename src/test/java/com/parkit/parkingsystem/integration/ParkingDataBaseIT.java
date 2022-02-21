@@ -51,9 +51,10 @@ public class ParkingDataBaseIT {
 
     }
 
+
     @Test
     public void testParkingACar(){
-        ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
+    	ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
         // Verifying that the ticket does not exist
         assertNull(ticketDAO.getTicket("ABCDEF"));
         parkingService.processIncomingVehicle(); //Creating a ticket for a car named ABCDEF
