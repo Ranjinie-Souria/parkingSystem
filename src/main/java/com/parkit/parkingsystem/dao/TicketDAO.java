@@ -86,4 +86,32 @@ public class TicketDAO {
         }
         return false;
     }
+    
+    public boolean isKnownUser(Ticket ticket) {
+    	Connection con = null;
+        try {
+            con = dataBaseConfig.getConnection();
+            PreparedStatement ps = con.prepareStatement(DBConstants.GET_KNOWN_USER);
+            ps.setString(1,ticket.getVehicleRegNumber());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+	            if(rs.getInt(1)>1) {
+		            System.out.println("You are a reccuring user, you parked here "+rs.getInt(1)+" times.");
+	            	dataBaseConfig.closeResultSet(rs);
+	                dataBaseConfig.closePreparedStatement(ps);
+	            	return true;            	
+	            }
+	            else {
+	            	dataBaseConfig.closeResultSet(rs);
+	                dataBaseConfig.closePreparedStatement(ps);
+	            	return false;
+	            }
+            }
+        }catch (Exception ex){
+            logger.error("Error fetching next available slot",ex);
+        }finally {
+            dataBaseConfig.closeConnection(con);   
+        }
+		return false;
+    }
 }
