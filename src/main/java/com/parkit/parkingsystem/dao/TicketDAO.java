@@ -12,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class TicketDAO {
 
@@ -108,10 +110,52 @@ public class TicketDAO {
 	            }
             }
         }catch (Exception ex){
-            logger.error("Error fetching next available slot",ex);
+            logger.error("Error fetching user",ex);
         }finally {
             dataBaseConfig.closeConnection(con);   
         }
 		return false;
     }
+    
+    public double getPrice(Ticket ticket) {
+    	Connection con = null;
+        try {
+            con = dataBaseConfig.getConnection();
+            PreparedStatement ps = con.prepareStatement(DBConstants.GET_PRICE);
+            ps.setString(1,ticket.getVehicleRegNumber());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+	            	return rs.getDouble(1);
+            }
+        }catch (Exception ex){
+            logger.error("Error : ",ex);
+        }finally {
+            dataBaseConfig.closeConnection(con);   
+        }
+		return 0;
+    }
+    
+    public java.util.Date getOutTime(Ticket ticket) {
+    	Connection con = null;
+        try {
+            con = dataBaseConfig.getConnection();
+            PreparedStatement ps = con.prepareStatement(DBConstants.GET_OUT_TIME);
+            ps.setString(1,ticket.getVehicleRegNumber());
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+            	SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM d HH:mm:ss z yyyy", Locale.ENGLISH);
+            	String dateFormated = dateFormat.format( rs.getTimestamp("OUT_TIME") );
+            	java.util.Date date = dateFormat.parse(dateFormated);
+            	logger.info("Ticket Out time is : ",dateFormated);
+            	
+            	return date;
+            }
+        }catch (Exception ex){
+            logger.error("Error : ",ex);
+        }finally {
+            dataBaseConfig.closeConnection(con);   
+        }
+		return null;
+    }
+    
 }

@@ -4,6 +4,7 @@ import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
 import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
 import com.parkit.parkingsystem.integration.service.DataBasePrepareService;
+import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.ParkingService;
 import com.parkit.parkingsystem.util.InputReaderUtil;
 import org.junit.jupiter.api.AfterAll;
@@ -14,10 +15,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
+
+import java.util.Date;
 
 @ExtendWith(MockitoExtension.class)
 public class ParkingDataBaseIT {
@@ -50,12 +55,11 @@ public class ParkingDataBaseIT {
     private static void tearDown(){
 
     }
-
-
+    
     @Test
     public void testParkingACar(){
     	ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
-        // Verifying that the ticket does not exist
+    	// Verifying that the ticket does not exist
         assertNull(ticketDAO.getTicket("ABCDEF"));
         parkingService.processIncomingVehicle(); //Creating a ticket for a car named ABCDEF
         // Check that a ticket is actually saved in DB and Parking table is updated with availability
@@ -63,13 +67,29 @@ public class ParkingDataBaseIT {
         assertFalse(ticketDAO.getTicket("ABCDEF").getParkingSpot().isAvailable());
     }
 
+    
+    
     @Test
     public void testParkingLotExit(){
-        testParkingACar();
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
+        parkingService.processIncomingVehicle();
+        try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        Date dateExpected = new Date();
         parkingService.processExitingVehicle();
-        //TODO: check that the fare generated and out time are populated correctly in the database
+        //Check that the fare generated and out time are populated correctly in the database
+        Ticket theTicket = new Ticket();
+        theTicket = ticketDAO.getTicket("ABCDEF");
+        Date dateGot = ticketDAO.getOutTime(theTicket);
         
+        assertEquals(0.0,ticketDAO.getPrice(theTicket),0.0001);
+        assertNotNull(ticketDAO.getOutTime(theTicket));
+        //getTime() gives the nb of milliseconds between the 01/01/1970 and the date
+        //System.out.println("date différence: "+(dateGot.getTime()-dateExpected.getTime()));
+        assertTrue("Dates aren't close enough to each other!", (dateGot.getTime() - dateExpected.getTime()) < 1000);
     }
 
 }
