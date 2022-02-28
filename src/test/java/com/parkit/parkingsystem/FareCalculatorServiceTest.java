@@ -30,15 +30,27 @@ import java.util.Date;
 public class FareCalculatorServiceTest {
 	private static final Logger logger = LogManager.getLogger("FareCalculatorServiceTest");
     private static FareCalculatorService fareCalculatorService;
+    private static DataBaseTestConfig dataBaseTestConfig = new DataBaseTestConfig();
+    private static ParkingSpotDAO parkingSpotDAO;
+    private static TicketDAO ticketDAO;
+    private static DataBasePrepareService dataBasePrepareService;
     private Ticket ticket;
 
+    @Mock
+    private static InputReaderUtil inputReaderUtil;
+    
     @BeforeAll
     private static void setUp() {
     	logger.info("Setting up the Fare Calculator Service");
         fareCalculatorService = new FareCalculatorService();
+        parkingSpotDAO = new ParkingSpotDAO();
+        parkingSpotDAO.dataBaseConfig = dataBaseTestConfig;
+        ticketDAO = new TicketDAO();
+        ticketDAO.dataBaseConfig = dataBaseTestConfig;
+        dataBasePrepareService = new DataBasePrepareService();
     }
     @BeforeEach
-    private void setUpPerTest() {
+    private void setUpPerTest(){
     	logger.info("Creating a new Ticket");
         ticket = new Ticket();
     }
@@ -175,7 +187,9 @@ public class FareCalculatorServiceTest {
        @Test
        @Tag("FareCalculatorService")
        @DisplayName("Checking if the users are correctly getting a discount if they already parked here before")
-       public void checkDiscountRecurringUsersBike(){
+       public void checkDiscountRecurringUsersBike() throws Exception{
+
+           
        	/*Old ticket*/
        	//A bike parked 1h ago for 30min
            Date inTime1 = new Date();
@@ -183,12 +197,12 @@ public class FareCalculatorServiceTest {
            Date outTime1 = new Date();
            outTime1.setTime( System.currentTimeMillis() - (  30 * 60 * 1000) );
            ParkingSpot parkingSpot1 = new ParkingSpot(1, ParkingType.BIKE,false);
-
            ticket.setInTime(inTime1);
            ticket.setOutTime(outTime1);
            ticket.setParkingSpot(parkingSpot1);
            ticket.setVehicleRegNumber("ABCDEF");
            fareCalculatorService.calculateFare(ticket);
+           ticketDAO.saveTicket(ticket);
            
            /*New ticket*/
            //The bike parks again for 30min
@@ -197,6 +211,9 @@ public class FareCalculatorServiceTest {
            Date outTime = new Date();
            ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE,false);
            Ticket newTicket = new Ticket();
+           newTicket.setInTime(inTime1);
+           newTicket.setOutTime(outTime1);
+           newTicket.setParkingSpot(parkingSpot1);
            newTicket.setVehicleRegNumber("ABCDEF");
            newTicket.setInTime(inTime);
            newTicket.setOutTime(outTime);
