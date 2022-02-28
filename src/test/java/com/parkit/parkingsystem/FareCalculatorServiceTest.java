@@ -2,18 +2,28 @@ package com.parkit.parkingsystem;
 
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.constants.ParkingType;
+import com.parkit.parkingsystem.dao.ParkingSpotDAO;
+import com.parkit.parkingsystem.dao.TicketDAO;
+import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
+import com.parkit.parkingsystem.integration.service.DataBasePrepareService;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.FareCalculatorService;
+import com.parkit.parkingsystem.service.ParkingService;
+import com.parkit.parkingsystem.util.InputReaderUtil;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 import java.util.Date;
 
@@ -27,7 +37,6 @@ public class FareCalculatorServiceTest {
     	logger.info("Setting up the Fare Calculator Service");
         fareCalculatorService = new FareCalculatorService();
     }
-
     @BeforeEach
     private void setUpPerTest() {
     	logger.info("Creating a new Ticket");
@@ -160,40 +169,43 @@ public class FareCalculatorServiceTest {
        fareCalculatorService.calculateFare(ticket);
        assertEquals((0 * Fare.CAR_RATE_PER_HOUR), ticket.getPrice());
     }
-    
 
     
-    
-    @Test
-    @Tag("FareCalculatorService")
-    @DisplayName("Checking if the users are correctly getting a discount if they already parked here before")
-    public void checkDiscountRecurringUsersBike(){
-    	/*Old ticket*/
-    	//A bike parked 1h ago for 30min
-        Date inTime1 = new Date();
-        inTime1.setTime( (System.currentTimeMillis() - (  30 * 60 * 1000)) - (  30 * 60 * 1000) );
-        Date outTime1 = new Date();
-        outTime1.setTime( System.currentTimeMillis() - (  30 * 60 * 1000) );
-        ParkingSpot parkingSpot1 = new ParkingSpot(1, ParkingType.BIKE,false);
+ 
+       @Test
+       @Tag("FareCalculatorService")
+       @DisplayName("Checking if the users are correctly getting a discount if they already parked here before")
+       public void checkDiscountRecurringUsersBike(){
+       	/*Old ticket*/
+       	//A bike parked 1h ago for 30min
+           Date inTime1 = new Date();
+           inTime1.setTime( (System.currentTimeMillis() - (  30 * 60 * 1000)) - (  30 * 60 * 1000) );
+           Date outTime1 = new Date();
+           outTime1.setTime( System.currentTimeMillis() - (  30 * 60 * 1000) );
+           ParkingSpot parkingSpot1 = new ParkingSpot(1, ParkingType.BIKE,false);
 
-        ticket.setInTime(inTime1);
-        ticket.setOutTime(outTime1);
-        ticket.setParkingSpot(parkingSpot1);
-        fareCalculatorService.calculateFare(ticket);
+           ticket.setInTime(inTime1);
+           ticket.setOutTime(outTime1);
+           ticket.setParkingSpot(parkingSpot1);
+           ticket.setVehicleRegNumber("ABCDEF");
+           fareCalculatorService.calculateFare(ticket);
+           
+           /*New ticket*/
+           //The bike parks again for 30min
+           Date inTime = new Date();
+           inTime.setTime( System.currentTimeMillis() - (  45 * 60 * 1000) );//45 minutes parking time
+           Date outTime = new Date();
+           ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE,false);
+           Ticket newTicket = new Ticket();
+           newTicket.setVehicleRegNumber("ABCDEF");
+           newTicket.setInTime(inTime);
+           newTicket.setOutTime(outTime);
+           newTicket.setParkingSpot(parkingSpot);
+           fareCalculatorService.calculateFare(newTicket);
+           
+           assertEquals(((0.75 * Fare.BIKE_RATE_PER_HOUR)*0.95), newTicket.getPrice() );
+       }
         
-        
-        /*New ticket*/
-        //The bike parks again for 30min
-        Date inTime = new Date();
-        inTime.setTime( System.currentTimeMillis() - (  45 * 60 * 1000) );//45 minutes parking time
-        Date outTime = new Date();
-        ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE,false);
-        ticket.setInTime(inTime);
-        ticket.setOutTime(outTime);
-        ticket.setParkingSpot(parkingSpot);
-        fareCalculatorService.calculateFare(ticket);
-        assertEquals(((0.75 * Fare.BIKE_RATE_PER_HOUR)*0.95), ticket.getPrice() );
-    }
     
 
 }
