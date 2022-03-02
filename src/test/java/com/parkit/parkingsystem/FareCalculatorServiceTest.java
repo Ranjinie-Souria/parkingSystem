@@ -2,38 +2,27 @@ package com.parkit.parkingsystem;
 
 import com.parkit.parkingsystem.constants.Fare;
 import com.parkit.parkingsystem.constants.ParkingType;
-import com.parkit.parkingsystem.dao.ParkingSpotDAO;
 import com.parkit.parkingsystem.dao.TicketDAO;
-import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
-import com.parkit.parkingsystem.integration.service.DataBasePrepareService;
 import com.parkit.parkingsystem.model.ParkingSpot;
 import com.parkit.parkingsystem.model.Ticket;
 import com.parkit.parkingsystem.service.FareCalculatorService;
-import com.parkit.parkingsystem.service.ParkingService;
 import com.parkit.parkingsystem.util.InputReaderUtil;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
-
 import java.util.Date;
 
 public class FareCalculatorServiceTest {
 	private static final Logger logger = LogManager.getLogger("FareCalculatorServiceTest");
     private static FareCalculatorService fareCalculatorService;
-    private static DataBaseTestConfig dataBaseTestConfig = new DataBaseTestConfig();
-    private static ParkingSpotDAO parkingSpotDAO;
     private static TicketDAO ticketDAO;
-    private static DataBasePrepareService dataBasePrepareService;
     private Ticket ticket;
 
     @Mock
@@ -43,11 +32,7 @@ public class FareCalculatorServiceTest {
     private static void setUp() {
     	logger.info("Setting up the Fare Calculator Service");
         fareCalculatorService = new FareCalculatorService();
-        parkingSpotDAO = new ParkingSpotDAO();
-        parkingSpotDAO.dataBaseConfig = dataBaseTestConfig;
         ticketDAO = new TicketDAO();
-        ticketDAO.dataBaseConfig = dataBaseTestConfig;
-        dataBasePrepareService = new DataBasePrepareService();
     }
     @BeforeEach
     private void setUpPerTest(){
@@ -189,7 +174,6 @@ public class FareCalculatorServiceTest {
        @DisplayName("Checking if the users are correctly getting a discount if they already parked here before")
        public void checkDiscountRecurringUsersBike() throws Exception{
 
-           
        	/*Old ticket*/
        	//A bike parked 1h ago for 30min
            Date inTime1 = new Date();
@@ -219,8 +203,7 @@ public class FareCalculatorServiceTest {
            newTicket.setOutTime(outTime);
            newTicket.setParkingSpot(parkingSpot);
            fareCalculatorService.calculateFare(newTicket);
-           
-           assertEquals(((0.75 * Fare.BIKE_RATE_PER_HOUR)*0.95), newTicket.getPrice() );
+           assertEquals(((0.75 * Fare.BIKE_RATE_PER_HOUR)*0.95),newTicket.getPrice());
        }
         
     
