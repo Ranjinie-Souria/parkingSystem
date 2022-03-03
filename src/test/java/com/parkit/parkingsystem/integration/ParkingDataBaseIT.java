@@ -1,13 +1,11 @@
 package com.parkit.parkingsystem.integration;
 
-import com.parkit.parkingsystem.constants.ParkingType;
-import com.parkit.parkingsystem.dao.ParkingSpotDAO;
-import com.parkit.parkingsystem.dao.TicketDAO;
-import com.parkit.parkingsystem.model.ParkingSpot;
-import com.parkit.parkingsystem.model.Ticket;
-import com.parkit.parkingsystem.service.ParkingService;
-import com.parkit.parkingsystem.util.InputReaderUtil;
+import static org.mockito.Mockito.when;
+
+import java.util.Date;
+
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,20 +14,24 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.mockito.Mockito.when;
 
-import java.util.Date;
+import com.parkit.parkingsystem.constants.ParkingType;
+import com.parkit.parkingsystem.dao.ParkingSpotDAO;
+import com.parkit.parkingsystem.dao.TicketDAO;
+import com.parkit.parkingsystem.integration.config.DataBaseTestConfig;
+import com.parkit.parkingsystem.integration.service.DataBasePrepareService;
+import com.parkit.parkingsystem.model.ParkingSpot;
+import com.parkit.parkingsystem.model.Ticket;
+import com.parkit.parkingsystem.service.ParkingService;
+import com.parkit.parkingsystem.util.InputReaderUtil;
 
 @ExtendWith(MockitoExtension.class)
 public class ParkingDataBaseIT {
 
+    private static DataBaseTestConfig dataBaseTestConfig = new DataBaseTestConfig();
     private static ParkingSpotDAO parkingSpotDAO;
     private static TicketDAO ticketDAO;
+    private static DataBasePrepareService dataBasePrepareService;
 
     @Mock
     private static InputReaderUtil inputReaderUtil;
@@ -37,13 +39,17 @@ public class ParkingDataBaseIT {
     @BeforeAll
     private static void setUp() throws Exception{
         parkingSpotDAO = new ParkingSpotDAO();
+        parkingSpotDAO.dataBaseConfig = dataBaseTestConfig;
         ticketDAO = new TicketDAO();
+        ticketDAO.dataBaseConfig = dataBaseTestConfig;
+        dataBasePrepareService = new DataBasePrepareService();
     }
 
     @BeforeEach
     private void setUpPerTest() throws Exception {
         when(inputReaderUtil.readSelection()).thenReturn(1);
         when(inputReaderUtil.readVehicleRegistrationNumber()).thenReturn("ABCDEF");
+        dataBasePrepareService.clearDataBaseEntries();
     }
 
     @AfterAll
@@ -57,10 +63,10 @@ public class ParkingDataBaseIT {
     public void testParkingACar(){
     	ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
     	// Verifying that the ticket does not exist
-        assertNull(ticketDAO.getTicket("ABCDEF"));
+        Assertions.assertNull(ticketDAO.getTicket("ABCDEF"));
         parkingService.processIncomingVehicle(); //Creating a ticket for a car named ABCDEF
-        assertNotNull(ticketDAO.getTicket("ABCDEF"));
-        assertFalse(ticketDAO.getTicket("ABCDEF").getParkingSpot().isAvailable());
+        Assertions.assertNotNull(ticketDAO.getTicket("ABCDEF"));
+        Assertions.assertFalse(ticketDAO.getTicket("ABCDEF").getParkingSpot().isAvailable());
     }
 
     
@@ -82,10 +88,10 @@ public class ParkingDataBaseIT {
         theTicket = ticketDAO.getTicket("ABCDEF");
         Date dateGot = ticketDAO.getOutTime(theTicket);
         
-        assertEquals(0.0,ticketDAO.getPrice(theTicket),0.0001);
-        assertNotNull(ticketDAO.getOutTime(theTicket));
+        Assertions.assertEquals(0.0,ticketDAO.getPrice(theTicket),0.0001);
+        Assertions.assertNotNull(ticketDAO.getOutTime(theTicket));
         //getTime() gives the nb of milliseconds between the 01/01/1970 and the date
-        assertTrue("Dates aren't close enough to each other!", (dateGot.getTime() - dateExpected.getTime()) < 1000);
+        Assertions.assertTrue((dateGot.getTime() - dateExpected.getTime()) < 1000);
     }
     
     @Test
@@ -104,7 +110,7 @@ public class ParkingDataBaseIT {
         Ticket theTicket = new Ticket();
         theTicket.setVehicleRegNumber("ABCDEF");
         Date inTime = new Date();
-        inTime.setTime( System.currentTimeMillis() - (  45 * 60 * 1000) );
+        inTime.setTime( System.currentTimeMillis() + (  45 * 60 * 1000) );
         Date outTime = new Date();
         outTime.setTime( System.currentTimeMillis() + (  45 * 60 * 1000) );
         theTicket.setInTime(inTime);
@@ -112,7 +118,7 @@ public class ParkingDataBaseIT {
         theTicket.setParkingSpot(new ParkingSpot(1, ParkingType.CAR,false));
         ticketDAO.saveTicket(theTicket);
         
-        assertTrue(ticketDAO.isKnownUser(theTicket));
+        Assertions.assertTrue(ticketDAO.isKnownUser(theTicket));
     }
     
     

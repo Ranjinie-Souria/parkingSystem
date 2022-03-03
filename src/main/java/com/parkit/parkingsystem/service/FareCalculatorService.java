@@ -40,7 +40,6 @@ public class FareCalculatorService {
 	        }
 	    	
 	    	TicketDAO dao = new TicketDAO();
-	    	System.out.println("VALEUR DE ISKNOWNUSER : "+dao.isKnownUser(ticket));
 	    	if(dao.isKnownUser(ticket)) {
 	    		//Known users get a 5% reduction
 	    		reduction = 0.95;
