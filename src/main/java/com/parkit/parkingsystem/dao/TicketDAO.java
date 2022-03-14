@@ -33,6 +33,7 @@ public class TicketDAO {
             ps.setDouble(3, ticket.getPrice());
             ps.setTimestamp(4, new Timestamp(ticket.getInTime().getTime()));
             ps.setTimestamp(5, (ticket.getOutTime() == null)?null: (new Timestamp(ticket.getOutTime().getTime())) );
+            logger.info("Ticket saved");
             return ps.execute();
         }catch (Exception ex){
             logger.error("Error fetching next available slot",ex);

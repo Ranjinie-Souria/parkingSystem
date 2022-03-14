@@ -16,7 +16,7 @@ public class FareCalculatorService {
         Date inHour = ticket.getInTime();
         Date outHour =  ticket.getOutTime();
         //converting the duration in milliseconds to hours
-        double durationMilliseconds = outHour.getTime() - inHour.getTime();
+        double durationMilliseconds = (double) outHour.getTime() - inHour.getTime();
         double duration = TimeUnit.MILLISECONDS.toHours((long) durationMilliseconds);
         //in the case the duration is inferior to 1 hour
         if(duration<1) {

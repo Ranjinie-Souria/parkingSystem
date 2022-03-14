@@ -12,7 +12,11 @@ public class InputReaderUtil {
 
     public int readSelection() {
         try {
-            int input = Integer.parseInt(scan.nextLine());
+        	int input = -1;
+        	while(scan !=null && scan.hasNextLine()){
+        		   if(scan.hasNext()){
+        			   input = Integer.parseInt(scan.nextLine());}
+        	}
             return input;
         }catch(Exception e){
             logger.error("Error while reading user input from Shell", e);
@@ -23,7 +27,12 @@ public class InputReaderUtil {
 
     public String readVehicleRegistrationNumber() throws Exception {
         try {
-            String vehicleRegNumber= scan.nextLine();
+        	String vehicleRegNumber = null;
+        	while(scan !=null && scan.hasNextLine()){
+     		   if(scan.hasNext()){
+     			  vehicleRegNumber= scan.nextLine();
+     			  }
+     		   }
             if(vehicleRegNumber == null || vehicleRegNumber.trim().length()==0) {
                 throw new IllegalArgumentException("Invalid input provided");
             }
