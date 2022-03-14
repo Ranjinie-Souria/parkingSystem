@@ -1,129 +1,129 @@
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:37 INFO  TicketDAO:36 - Ticket saved
-2022-03-14 13:36:37 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:38 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  TicketDAO:36 - Ticket saved
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:39 INFO  TicketDAO:36 - Ticket saved
-2022-03-14 13:36:39 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  TicketDAO:150 - Ticket Out time is : 
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  TicketDAO:150 - Ticket Out time is : 
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  TicketDAO:36 - Ticket saved
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:14 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseTestConfig:24 - Closing DB connection
-2022-03-14 13:36:40 ERROR ParkingService:71 - Error fetching next available parking slot
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:32 - Setting up the Fare Calculator Service
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  TicketDAO:36 - Ticket saved
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
-2022-03-14 13:36:40 INFO  DataBaseConfig:13 - Create DB connection
-2022-03-14 13:36:40 INFO  DataBaseConfig:46 - Closing Result Set
-2022-03-14 13:36:40 INFO  DataBaseConfig:35 - Closing Prepared Statement
-2022-03-14 13:36:40 INFO  DataBaseConfig:24 - Closing DB connection
-2022-03-14 13:36:40 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:15 INFO  FareCalculatorServiceTest:32 - Setting up the Fare Calculator Service
+2022-03-14 13:44:15 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:15 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:15 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  TicketDAO:36 - Ticket saved
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  FareCalculatorServiceTest:38 - Creating a new Ticket
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:16 INFO  TicketDAO:36 - Ticket saved
+2022-03-14 13:44:16 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:17 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:17 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:17 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:17 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:17 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  TicketDAO:36 - Ticket saved
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:18 INFO  TicketDAO:36 - Ticket saved
+2022-03-14 13:44:18 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  TicketDAO:150 - Ticket Out time is : 
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  TicketDAO:150 - Ticket Out time is : 
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  TicketDAO:36 - Ticket saved
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:14 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseTestConfig:24 - Closing DB connection
+2022-03-14 13:44:19 ERROR ParkingService:71 - Error fetching next available parking slot
+2022-03-14 13:44:19 INFO  DataBaseConfig:13 - Create DB connection
+2022-03-14 13:44:19 INFO  DataBaseConfig:46 - Closing Result Set
+2022-03-14 13:44:19 INFO  DataBaseConfig:35 - Closing Prepared Statement
+2022-03-14 13:44:19 INFO  DataBaseConfig:24 - Closing DB connection
